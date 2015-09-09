@@ -6,9 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
-public class Demo {
+public class DemoTest {
 
-	private static Logger log = LoggerFactory.getLogger(Demo.class);
+	private static Logger log = LoggerFactory.getLogger(DemoTest.class);
 
 	/**
 	 * default strategy
@@ -17,7 +17,7 @@ public class Demo {
 	 */
 	@Test
 	public void test() {
-		new ArticleReader(Strategy.Default).read("src/main/resource/demo").getLines().forEach(line -> {
+		new ArticleReader(Strategy.Default).read("src/test/resources/demo").getLines().forEach(line -> {
 			log.debug(line);
 		});
 	}
