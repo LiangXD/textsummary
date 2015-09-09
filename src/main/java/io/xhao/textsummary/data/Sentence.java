@@ -1,3 +1,4 @@
+package io.xhao.textsummary.data;
 /*package org.shako.textsummary.data;
 
 import java.util.HashMap;

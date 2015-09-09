@@ -1,4 +1,4 @@
-package org.shako.textsummary.strategy;
+package io.xhao.textsummary.strategy;
 
 public class StrategyConstant {
 

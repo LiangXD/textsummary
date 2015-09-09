@@ -1,4 +1,4 @@
-package org.shako.textsummary;
+package io.xhao.textsummary;
 
 import java.util.Arrays;
 import java.util.List;

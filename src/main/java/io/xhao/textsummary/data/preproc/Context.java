@@ -1,6 +1,6 @@
-package org.shako.textsummary.data.preproc;
+package io.xhao.textsummary.data.preproc;
 
-import org.shako.textsummary.data.Article;
+import io.xhao.textsummary.data.Article;
 
 public class Context {
 

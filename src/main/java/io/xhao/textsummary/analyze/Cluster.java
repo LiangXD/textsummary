@@ -1,4 +1,4 @@
-package org.shako.textsummary.analyze;
+package io.xhao.textsummary.analyze;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

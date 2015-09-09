@@ -1,14 +1,15 @@
-package org.shako.textsummary.analyze;
+package io.xhao.textsummary.analyze;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import org.shako.textsummary.data.Article;
-import org.shako.textsummary.data.Token;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.xhao.textsummary.data.Article;
+import io.xhao.textsummary.data.Token;
 
 class Graph {
 

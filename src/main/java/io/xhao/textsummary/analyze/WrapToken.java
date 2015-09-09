@@ -1,9 +1,9 @@
-package org.shako.textsummary.analyze;
+package io.xhao.textsummary.analyze;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.shako.textsummary.data.Token;
+import io.xhao.textsummary.data.Token;
 
 class WrapToken {
 	private Token data;

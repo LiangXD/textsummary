@@ -1,10 +1,11 @@
-package org.shako.textsummary.demo;
+package io.xhao.textsummary;
 
-import org.shako.textsummary.ArticleReader;
-import org.shako.textsummary.Strategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
+
+import io.xhao.textsummary.ArticleReader;
+import io.xhao.textsummary.Strategy;
 
 public class DemoTest {
 

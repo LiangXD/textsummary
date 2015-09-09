@@ -1,9 +1,9 @@
-package org.shako.textsummary.analyze;
+package io.xhao.textsummary.analyze;
 
 import java.util.List;
 
-import org.shako.textsummary.data.Article;
-import org.shako.textsummary.data.Token;
+import io.xhao.textsummary.data.Article;
+import io.xhao.textsummary.data.Token;
 
 public class Analyzer {
 
