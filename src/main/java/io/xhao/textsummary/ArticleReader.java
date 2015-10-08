@@ -8,6 +8,8 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import io.xhao.textsummary.strategy.Strategy;
+
 public class ArticleReader {
 	private static Logger log = LoggerFactory.getLogger(ArticleReader.class);
 	private Strategy strategy;
@@ -22,11 +24,11 @@ public class ArticleReader {
 			in = new BufferedReader(new FileReader(filePath));
 			String s;
 			int i = 0;
-			for (; (s = in.readLine()) != null; i++) {
+			for (; (s = in.readLine()) != null && !strategy.endReading(); i++) {
 				// TODO read data from s;
-				strategy.preProc(i, s);
+				strategy.preProcess(i, s);
 			}
-			return strategy.proc();
+			return strategy.process();
 		} catch (FileNotFoundException e) {
 			log.warn("File: {} not found!", filePath);
 		} catch (IOException e) {
@@ -39,7 +41,6 @@ public class ArticleReader {
 					in = null;
 				}
 		}
-
 		return SummaryResult.NoSummaryResult;
 	}
 }
