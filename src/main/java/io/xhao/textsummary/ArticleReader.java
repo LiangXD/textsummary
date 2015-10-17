@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.xhao.textsummary.strategy.Strategy;
+import io.xhao.textsummary.util.FileSplitUtil;
 
 public class ArticleReader {
 	private static Logger log = LoggerFactory.getLogger(ArticleReader.class);
@@ -23,7 +24,14 @@ public class ArticleReader {
 		try {
 			in = new BufferedReader(new FileReader(filePath));
 			String s;
+			int line = 1;
+			FileSplitUtil util = new FileSplitUtil();
+			while ((s = in.readLine()) != null && !strategy.endReading()) {
+				
+			}
+
 			int i = 0;
+
 			for (; (s = in.readLine()) != null && !strategy.endReading(); i++) {
 				// TODO read data from s;
 				strategy.preProcess(i, s);

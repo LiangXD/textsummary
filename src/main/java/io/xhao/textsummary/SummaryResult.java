@@ -5,19 +5,14 @@ import java.util.List;
 
 public interface SummaryResult {
 
-	public List<String> getLines();
+	default List<String> getLines() {
+		return new ArrayList<>();
+	}
 
-	public void addLine(String content);
+	default void addLine(String content) {
+		// NOP
+	}
 
 	public static final SummaryResult NoSummaryResult = new SummaryResult() {
-		@Override
-		public List<String> getLines() {
-			return new ArrayList<>();
-		}
-
-		@Override
-		public void addLine(String content) {
-			// NOP
-		}
 	};
 }
