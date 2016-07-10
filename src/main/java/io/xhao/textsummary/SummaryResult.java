@@ -3,16 +3,15 @@ package io.xhao.textsummary;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface SummaryResult {
+public class SummaryResult {
 
-	default List<String> getLines() {
-		return new ArrayList<>();
+	private List<String> contents = new ArrayList<>(4);
+
+	public List<String> getLines() {
+		return contents;
 	}
 
-	default void addLine(String content) {
-		// NOP
+	void addLine(String content) {
+		contents.add(content);
 	}
-
-	public static final SummaryResult NoSummaryResult = new SummaryResult() {
-	};
 }

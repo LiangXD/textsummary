@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.xhao.textsummary.strategy.Strategy;
-import io.xhao.textsummary.util.FileSplitUtil;
 
 public class ArticleReader {
 	private static Logger log = LoggerFactory.getLogger(ArticleReader.class);
@@ -24,18 +23,19 @@ public class ArticleReader {
 		try {
 			in = new BufferedReader(new FileReader(filePath));
 			String s;
-			int line = 1;
-			FileSplitUtil util = new FileSplitUtil();
+			int lineNumber = 1;
+			SentenceReader reader = new SentenceReader();
+
 			while ((s = in.readLine()) != null && !strategy.endReading()) {
-				
+				// 以sentence为单位处理文本
+				reader.read(s);
+				// 存储并处理sentence
+				while (reader.remain() && !strategy.endReading()) {
+					Sentence line = reader.next();
+					strategy.preProcess(lineNumber, line);
+				}
 			}
-
-			int i = 0;
-
-			for (; (s = in.readLine()) != null && !strategy.endReading(); i++) {
-				// TODO read data from s;
-				strategy.preProcess(i, s);
-			}
+			// 分析
 			return strategy.process();
 		} catch (FileNotFoundException e) {
 			log.warn("File: {} not found!", filePath);
@@ -49,6 +49,6 @@ public class ArticleReader {
 					in = null;
 				}
 		}
-		return SummaryResult.NoSummaryResult;
+		return new SummaryResult();
 	}
 }
